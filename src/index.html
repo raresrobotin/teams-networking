@@ -18,19 +18,40 @@
       </div>
     </header>
     <section>
-      <table id="teamsTable" border="1">
-        <thead>
-          <tr>
-            <th>Promotion</th>
-            <th>Members</th>
-            <th>Project Name</th>
-            <th>Project URL</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-        <tfoot></tfoot>
-      </table>
+      <form action="secretary.html" method="get">
+        <table id="teamsTable" border="1">
+          <thead>
+            <tr>
+              <th>Promotion</th>
+              <th>Members</th>
+              <th>Project Name</th>
+              <th>Project URL</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+          <tfoot>
+            <tr>
+              <td>
+                <input type="text" name="promotion" id="promotion" placeholder="Enter promotions" required />
+              </td>
+              <td>
+                <input type="text" name="members" id="members" placeholder="Enter Members" required />
+              </td>
+              <td>
+                <input type="text" name="name" id="name" placeholder="Enter Name" required />
+              </td>
+              <td>
+                <input type="text" name="project url" id="project url" placeholder="Enter project url" required />
+              </td>
+              <td>
+                <button type="submit">💾</button>
+                <button type="reset">✖</button>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </form>
     </section>
     <footer>
       <a href="https://github.com/raresrobotin/teams-networking">Github</a>

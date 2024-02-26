@@ -73,7 +73,7 @@ section {
 }
 
 #teamsTable tr:nth-child(even) {
-  background-color: w#f2f2f2;
+  background-color: #f2f2f2;
 }
 
 footer {
