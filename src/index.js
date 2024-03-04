@@ -37,15 +37,18 @@ function loadTeams() {
     });
 }
 
-function onSubmit(e) {
-  e.preventDefault();
-  console.warn("pls save all values");
-  let team = {
+function getFormValues() {
+  return {
     promotion: document.querySelector("input[name=promotion]").value,
     members: document.querySelector("input[name=members]").value,
     name: document.querySelector("input[name=name]").value,
     url: document.querySelector("input[name=url]").value
   };
+}
+
+function onSubmit(e) {
+  e.preventDefault();
+  let team = getFormValues();
   createTeamRequest(team);
   window.location.reload();
 }
