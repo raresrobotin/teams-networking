@@ -1,6 +1,7 @@
 import "./style.css";
 
 let allTeams = [];
+let editId;
 
 function $(selector) {
   return document.querySelector(selector);
@@ -26,7 +27,7 @@ function deleteTeamRequest(id) {
   });
 }
 
-function uptadeTeamRequest(team) {
+function updateTeamRequest(team) {
   fetch("http://localhost:3000/teams-json/update", {
     method: "PUT",
     headers: {
@@ -87,11 +88,19 @@ function setFormValues(team) {
 function onSubmit(e) {
   e.preventDefault();
   let team = getFormValues();
-  createTeamRequest(team);
+  if (editId) {
+    team.id = editId;
+    console.warn("update", editId, team);
+    updateTeamRequest(team);
+  } else {
+    console.warn("create", team);
+    createTeamRequest(team);
+  }
   window.location.reload();
 }
 
 function startEdit(id) {
+  editId = id;
   const team = allTeams.find(team => {
     return id === team.id;
   });
